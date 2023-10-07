@@ -8,10 +8,10 @@ jobs:
     steps:
       - run: echo '${{ toJSON(github) }}'
       - run: echo ${{github.ref}},${{github.ref_name}},${{github.ref}},${{github.base_ref}},${{github.head_ref}}
-      # - run: mkdir publish && touch publish/.gitkeep
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./publish
-      #     destination_dir: ${{ github.ref_name }}
+      - run: mkdir publish && touch publish/.gitkeep
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./publish
+          destination_dir: ${{ github.event.ref }} # ブランチ名
