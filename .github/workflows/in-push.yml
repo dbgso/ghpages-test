@@ -1,4 +1,4 @@
-name: on delete branch
+name: on push branch
 
 on:
   - delete
