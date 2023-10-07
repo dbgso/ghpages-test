@@ -6,7 +6,7 @@ jobs:
   build-ghpages:
     runs-on: ubuntu-latest
     steps:
-      - run: mkdir public && echo ${{ github.ref_name }} > public/index.html
+      - run: mkdir public && echo example ${{ github.ref_name }} > public/index.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
