@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{github.ref}},${{github.ref_name}},${{github.ref}},${{github.base_ref}},${{github.head_ref}}
-      - run: echo ${{github}}
+      - run: echo '${{ toJSON(github) }}'
