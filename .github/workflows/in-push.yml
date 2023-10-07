@@ -1,0 +1,11 @@
+name: on delete branch
+
+on:
+  - delete
+  - push
+
+jobs:
+  delete-ghpages:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{github.ref}},${{github.ref_name}},${{github.ref}},${{github.base_ref}},${{github.head_ref}}
