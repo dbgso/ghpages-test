@@ -6,10 +6,10 @@ jobs:
   build-ghpages:
     runs-on: ubuntu-latest
     steps:
-      - run: mkdir publish && echo example ${{ github.base_ref }} > publish/index.html
+      - run: mkdir publish && echo example ${{ github.head_ref }} > publish/index.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./publish
-          destination_dir: ${{ github.base_ref }}
+          destination_dir: ${{ github.head_ref }}
